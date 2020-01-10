@@ -15,7 +15,7 @@ class Login extends Component {
             <KeyboardAvoidingView behavior='padding' style={{ height }} >
                 <Block >
                     <Block flex={3} color='light'  >
-                        <Text style={{ marginTop: 20 }}>
+                        <Text style={{ position: 'absolute', bottom: (height / 2) + 20 }}>
                             <Text bold h1 color='secondary'>Login {"\n"}</Text>
                             <Text bold h1 color='secondary'>to your Account</Text>
                         </Text>
