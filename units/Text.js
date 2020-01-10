@@ -35,6 +35,7 @@ export default class Typography extends Component {
             info,
             warning,
             success,
+            alternative,
             style,
             children,
             ...props
@@ -70,6 +71,7 @@ export default class Typography extends Component {
             info && styles.info,
             warning && styles.warning,
             success && styles.success,
+            alternative && styles.alternative,
             style,
         ]
 
@@ -93,11 +95,9 @@ const styles = StyleSheet.create({
         fontFamily: 'Montserrat-Bold',
     },
     semibold: {
-        fontWeight: '500',
         fontFamily: 'Montserrat-SemiBold',
     },
     lightText: {
-        fontWeight: '200',
         fontFamily: 'Montserrat-Light',
     },
     // Position
@@ -117,6 +117,7 @@ const styles = StyleSheet.create({
     info: { color: theme.colors.info },
     warning: { color: theme.colors.warning },
     success: { color: theme.colors.success },
+    alternative: { color: theme.colors.alternative },
     // Fonts
     h1: theme.fonts.h1,
     h2: theme.fonts.h2,

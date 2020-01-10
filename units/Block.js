@@ -12,7 +12,12 @@ export class Block extends Component {
             column,
             center,
             middle,
+            left,
+            right,
+            card,
+            shadow,
             color,
+            space,
             style,
             children,
             ...props
@@ -26,6 +31,11 @@ export class Block extends Component {
             column && styles.column,
             center && styles.center,
             middle && styles.middle,
+            left && styles.left,
+            right && styles.right,
+            card && styles.card,
+            shadow && styles.shadow,
+            space && { justifyContent: `space-${space}` },
             color && styles[color], // Predefined style colors for background
             color && !styles[color] && { backgroundColor: color }, // Custom backgroundolor
             style,
@@ -51,20 +61,27 @@ const styles = StyleSheet.create({
     column: {
         flexDirection: 'column'
     },
-    card: {
-        borderRadius: theme.sizes.border
-    },
     center: {
         alignItems: 'center'
     },
     middle: {
         justifyContent: 'center'
     },
+    left: {
+        justifyContent: 'flex-start'
+    },
+    right: {
+        justifyContent: 'flex-end'
+    },
+    card: {
+        borderRadius: theme.sizes.border
+    },
     shadow: {
         shadowColor: theme.colors.dark,
-        shadowOffset: { width: 0, height: 0 },
+        shadowOffset: { width: 0, height: 4 },
         shadowOpacity: 0.1,
-        shadowRadius: 10
+        shadowRadius: 10,
+        elevation: 1
     },
     accent: { backgroundColor: theme.colors.accent },
     accent2: { backgroundColor: theme.colors.accent2 },

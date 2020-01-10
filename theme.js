@@ -9,6 +9,7 @@ const colors = {
     info: '#5497D7',
     warning: '#DAB744',
     success: '#54DD44',
+    alternative: '#C26812'
 }
 
 const sizes = {
@@ -31,13 +32,14 @@ const sizes = {
 
 const fonts = {
     h1: {
-        // fontFamily: 'Kollektif-Bold'
+        fontFamily: 'Montserrat-Bold',
         fontSize: sizes.h1,
     },
     h2: {
         fontSize: sizes.h2,
     },
     h3: {
+        fontFamily: 'Montserrat-SemiBold',
         fontSize: sizes.h3,
     },
     body: {
@@ -47,6 +49,7 @@ const fonts = {
         fontSize: sizes.title,
     },
     caption: {
+        fontFamily: 'Montserrat-Bold',
         fontSize: sizes.caption,
     },
     small: {

@@ -7,26 +7,17 @@ import * as Font from 'expo-font'
 import * as theme from './theme'
 
 // Components
+import AuthLoading from './components/Auth/AuthLoading'
 import Login from './components/Auth/Login'
 import Register from './components/Auth/Register'
 import Home from './components/Dashboard/Home'
-import Settings from './components/Dashboard/Home'
-import AuthLoading from './components/Auth/AuthLoading'
+import Settings from './components/Dashboard/Settings'
+import AddTicket from './components/Dashboard/AddTicket'
+import AllTickets from './components/Dashboard/AllTickets'
+import MyTickets from './components/Dashboard/MyTickets'
+import TicketDetails from './components/Dashboard/TicketDetails'
 
 
-// const AppStack = createStackNavigator({ Home, Settings });
-// const AuthStack = createStackNavigator({ Login: Login });
-
-// export default createAppContainer(createSwitchNavigator(
-//     {
-//         AuthLoading: AuthLoading,
-//         App: AppStack,
-//         Auth: AuthStack,
-//     },
-//     {
-//         initialRouteName: 'AuthLoading',
-//     }
-// ));
 class App extends Component {
     state = {
         fontsLoaded: false
@@ -58,7 +49,7 @@ class App extends Component {
             )
         }
         return (
-            <Block color='light' middle style={styles.container}>
+            <Block color='light' middle >
                 <AppContainer />
             </Block>
 
@@ -76,9 +67,15 @@ const AppSwitchNavigator = createSwitchNavigator({
     Auth: createSwitchNavigator({
         Login,
         Register,
+    }),
+    Dashboard: createStackNavigator({
+        Home,
+        Settings,
+        AllTickets,
+        TicketDetails,
+        AddTicket,
+        MyTickets
     })
-    // Register: { screen: Register },
-    // Login: { screen: Login },
 })
 
 const AppContainer = createAppContainer(AppSwitchNavigator)

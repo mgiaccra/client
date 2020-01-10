@@ -12,7 +12,7 @@ class Register extends Component {
 
     render() {
         return (
-            <KeyboardAvoidingView behavior='padding' style={{ height }} >
+            <KeyboardAvoidingView behavior='padding' style={styles.container} >
                 <Block>
                     <Block flex={3} >
                         <Text style={{ position: 'absolute', bottom: (height / 2) + 20 }}>
@@ -42,6 +42,10 @@ class Register extends Component {
 }
 
 const styles = StyleSheet.create({
+    container: {
+        padding: theme.sizes.padding,
+        height
+    },
     authInput: {
         height: 50,
         borderColor: theme.colors.secondary,
