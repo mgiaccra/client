@@ -1,46 +1,90 @@
 import React, { Component } from 'react'
-import { StyleSheet } from 'react-native'
-import { Font } from 'expo-font'
+import { StyleSheet, ActivityIndicator } from 'react-native'
+import { createSwitchNavigator, createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
 import { Block, Text } from './units'
+import * as Font from 'expo-font'
 import * as theme from './theme'
 
 // Components
-import Login from './components/Login/Login'
+import Login from './components/Auth/Login'
+import Register from './components/Auth/Register'
+import Home from './components/Dashboard/Home'
+import Settings from './components/Dashboard/Home'
+import AuthLoading from './components/Auth/AuthLoading'
 
-export default class App extends Component {
+
+// const AppStack = createStackNavigator({ Home, Settings });
+// const AuthStack = createStackNavigator({ Login: Login });
+
+// export default createAppContainer(createSwitchNavigator(
+//     {
+//         AuthLoading: AuthLoading,
+//         App: AppStack,
+//         Auth: AuthStack,
+//     },
+//     {
+//         initialRouteName: 'AuthLoading',
+//     }
+// ));
+class App extends Component {
     state = {
         fontsLoaded: false
     }
 
     loadFonts() {
         return Font.loadAsync({
-            // 'Josefin-Thin': require('./assets/fonts/JosefinSans-Thin.ttf'),
-            // 'Josefin-Light': require('./assets/fonts/JosefinSans-Light.ttf'),
-            // 'Josefin-Regular': require('./assets/fonts/JosefinSans-Regular.ttf'),
-            // 'Josefin-SemiBold': require('./assets/fonts/JosefinSans-SemiBold.ttf'),
-            'Montserrat-Light': require('./assets/fonts/Montserrat-Light.ttf'),
             'Montserrat-Regular': require('./assets/fonts/Montserrat-Regular.ttf'),
-            'Montserrat-SemiBold': require('./assets/fonts/Montserrat-SemiBold.ttf'),
             'Montserrat-Bold': require('./assets/fonts/Montserrat-Bold.ttf'),
+            'Montserrat-SemiBold': require('./assets/fonts/Montserrat-SemiBold.ttf'),
+            'Montserrat-ExtraBold': require('./assets/fonts/Montserrat-ExtraBold.ttf'),
+            'Montserrat-Medium': require('./assets/fonts/Montserrat-Medium.ttf'),
+            'Montserrat-Light': require('./assets/fonts/Montserrat-Light.ttf'),
         })
     }
 
     async componentDidMount() {
+        console.log('Auth loading')
         await this.loadFonts()
-
         this.setState({ fontsLoaded: true })
     }
+
     render() {
+        if (!this.state.fontsLoaded) {
+            return (
+                <Block middle style={styles.container}>
+                    <ActivityIndicator size="large" color="#D61B1F" />
+                </Block>
+            )
+        }
         return (
-            <Block color='light' style={styles.container} >
-                <Login />
+            <Block color='light' middle style={styles.container}>
+                <AppContainer />
             </Block>
+
         );
     }
 }
 
 const styles = StyleSheet.create({
     container: {
-        paddingHorizontal: theme.sizes.padding
-    },
-});
+        padding: theme.sizes.padding
+    }
+})
+
+const AppSwitchNavigator = createSwitchNavigator({
+    Auth: createSwitchNavigator({
+        Login,
+        Register,
+    })
+    // Register: { screen: Register },
+    // Login: { screen: Login },
+})
+
+const AppContainer = createAppContainer(AppSwitchNavigator)
+
+export default App
+
+// export default createSwitchNavigator({
+//     AuthLoading: AuthLoading
+// })
