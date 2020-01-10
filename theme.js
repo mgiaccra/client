@@ -1,8 +1,8 @@
 const colors = {
     accent: '#9B9693',
     accent2: '#B8A7A7',
-    light: '#9B9693',
-    primary: '7B8175',
+    light: '#FFFFFD',
+    primary: '#7B8175',
     secondary: '#2F3126',
     dark: '#0C110D',
     danger: '#D75844',
@@ -16,6 +16,7 @@ const sizes = {
     base: 12,
     font: 12,
     border: 12,
+    padding: 10,
 
     // Font Sizes
     h1: 36,
@@ -25,6 +26,7 @@ const sizes = {
     title: 14,
     caption: 12,
     small: 8,
+    label: 28,
 }
 
 const fonts = {
