@@ -18,67 +18,62 @@ import MyTickets from './components/Dashboard/MyTickets'
 import TicketDetails from './components/Dashboard/TicketDetails'
 
 class App extends Component {
-	state = {
-		fontsLoaded: false
-	}
+    state = {
+        fontsLoaded: false
+    }
 
-	loadFonts() {
-		return Font.loadAsync({
-			'Montserrat-Regular': require('./assets/fonts/Montserrat-Regular.ttf'),
-			'Montserrat-Bold': require('./assets/fonts/Montserrat-Bold.ttf'),
-			'Montserrat-SemiBold': require('./assets/fonts/Montserrat-SemiBold.ttf'),
-			'Montserrat-ExtraBold': require('./assets/fonts/Montserrat-ExtraBold.ttf'),
-			'Montserrat-Medium': require('./assets/fonts/Montserrat-Medium.ttf'),
-			'Montserrat-Light': require('./assets/fonts/Montserrat-Light.ttf')
-		})
-	}
+    loadFonts() {
+        return Font.loadAsync({
+            'Montserrat-Regular': require('./assets/fonts/Montserrat-Regular.ttf'),
+            'Montserrat-Bold': require('./assets/fonts/Montserrat-Bold.ttf'),
+            'Montserrat-SemiBold': require('./assets/fonts/Montserrat-SemiBold.ttf'),
+            'Montserrat-ExtraBold': require('./assets/fonts/Montserrat-ExtraBold.ttf'),
+            'Montserrat-Medium': require('./assets/fonts/Montserrat-Medium.ttf'),
+            'Montserrat-Light': require('./assets/fonts/Montserrat-Light.ttf')
+        })
+    }
 
-	async componentDidMount() {
-		console.log('Auth loading')
-		await this.loadFonts()
-		this.setState({ fontsLoaded: true })
-	}
+    async componentDidMount() {
+        console.log('Auth loading')
+        await this.loadFonts()
+        this.setState({ fontsLoaded: true })
+    }
 
-	render() {
-		if (!this.state.fontsLoaded) {
-			return (
-				<Block middle style={styles.container}>
-					<ActivityIndicator size='large' color={theme.colors.secondary} />
-				</Block>
-			)
-		}
-		return (
-			<Block color='light' middle>
-				<AppContainer />
-			</Block>
-		)
-	}
+    render() {
+        if (!this.state.fontsLoaded) {
+            return (
+                <Block middle style={styles.container}>
+                    <ActivityIndicator size='large' color={theme.colors.secondary} />
+                </Block>
+            )
+        }
+        return (
+            <Block color='light' middle>
+                <AppContainer />
+            </Block>
+        )
+    }
 }
 
 const styles = StyleSheet.create({
-	container: {
-		padding: theme.sizes.padding
-	}
+    container: {
+        padding: theme.sizes.padding
+    }
 })
 
 const AppSwitchNavigator = createSwitchNavigator({
-	Auth: createSwitchNavigator({
-		Login,
-		Register
-	}),
-	Dashboard: createStackNavigator({
-		Home,
-		Profile: {
-			screen: Profile,
-			navigationOptions: {
-				headerShown: false
-			}
-		},
-		AllTickets,
-		TicketDetails,
-		AddTicket,
-		MyTickets
-	})
+    Auth: createSwitchNavigator({
+        Login,
+        Register
+    }),
+    Dashboard: createStackNavigator({
+        Home,
+        Profile,
+        AllTickets,
+        TicketDetails,
+        AddTicket,
+        MyTickets
+    })
 })
 
 const AppContainer = createAppContainer(AppSwitchNavigator)
