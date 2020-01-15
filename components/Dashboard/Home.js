@@ -45,6 +45,11 @@ class Home extends Component {
         this.props.navigation.navigate('AddTicket')
     }
 
+    gotoAllTicketsScreen = () => {
+        console.log('Goto All Tickets Screen')
+        this.props.navigation.navigate('AllTickets')
+    }
+
     renderChart() {
         const { chart } = this.props
         const LineShadow = ({ line }) => (
@@ -151,7 +156,7 @@ class Home extends Component {
             <Block flex={0.8} column color='light' style={styles.requests}>
                 <Block flex={false} row space='between' style={styles.requestsHeader}>
                     <Text lightText>Recent Updates</Text>
-                    <TouchableOpacity activeOpacity={0.8}>
+                    <TouchableOpacity activeOpacity={0.8} onPress={this.gotoAllTicketsScreen}>
                         <Text semibold color='accent'>
                             View All
 						</Text>

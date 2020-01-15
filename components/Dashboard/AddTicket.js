@@ -14,7 +14,7 @@ import { ThemeProvider, Badge, Icon } from 'react-native-elements'
 import { Block, Text } from '../../units'
 import * as theme from '../../theme'
 import * as mocks from '../../mocks'
-import { width, height } from '../../constants'
+import { width, height, priority } from '../../constants'
 
 
 const custom = {
@@ -27,6 +27,10 @@ const custom = {
     }
 }
 class AddTicket extends Component {
+    static navigationOptions = {
+        headerShown: false
+    }
+
     constructor() {
         super()
 
@@ -37,13 +41,6 @@ class AddTicket extends Component {
             charactersRemaining: 100,
             priority: 1
         }
-    }
-    static navigationOptions = {
-        headerShown: false
-    }
-
-    componentDidMount() {
-        // this.onViewableItemsChanged()
     }
 
     goBack = () => {
@@ -161,7 +158,7 @@ class AddTicket extends Component {
                             onChangeText={this.onChangeDescriptionInput}
                             value={this.state.description} />
                         <Block row space='between' style={{ paddingVertical: 5 }}>
-                            <Text semibold >100 character limit</Text>
+                            <Text lightText color='accent' >100 character limit</Text>
                             <ThemeProvider theme={custom}>
                                 <Badge
                                     value={<Text color='white' semibold>{'  '}{this.state.charactersRemaining}{'  '}</Text>}
@@ -171,11 +168,6 @@ class AddTicket extends Component {
                             </ThemeProvider>
                         </Block>
                     </Block>
-                    <Block>
-
-                    </Block>
-
-
                 </Block>
                 <Block flex={0.75} column>
                     <Text h3 semibold style={{ paddingBottom: 10 }}>Swipe left or right to choose priority</Text>
@@ -191,9 +183,9 @@ class AddTicket extends Component {
                         scrollEventThrottle={16}
                         snapToAlignment='center'
                         style={{ overflow: 'visible', height: 280 }}
-                        data={mocks.priority}
+                        data={priority}
                         keyExtractor={(item, index) => `${item.id}`}
-                        renderItem={({ item }) => this.renderDestination(item)}
+                        renderItem={({ item }) => this.renderPriority(item)}
                     />
                 </Block>
                 <Block flex={0.15}>
@@ -203,7 +195,7 @@ class AddTicket extends Component {
         )
     }
 
-    renderDestination = item => {
+    renderPriority = item => {
         return (
             <Block flex={false} column>
                 <ImageBackground
@@ -211,8 +203,7 @@ class AddTicket extends Component {
                     imageStyle={{ borderRadius: 12 }}
                     source={{ uri: item.image }}
                 >
-
-                </ImageBackground >
+                </ImageBackground>
                 <Text center semibold color='accent' style={{ paddingTop: 10 }}>{item.priority}</Text>
             </Block>
 

@@ -129,7 +129,6 @@ const priority = [
         priority: 'Low',
         image: 'https://res.cloudinary.com/tutcan/image/upload/v1578956860/blue.jpg'
     },
-
 ]
 
 export { requests, chart, user, requestTitles, priority }
