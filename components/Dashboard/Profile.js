@@ -199,7 +199,8 @@ const styles = StyleSheet.create({
     safe: {
         flex: 1,
         backgroundColor: theme.colors.light,
-        padding: theme.sizes.padding
+        padding: theme.sizes.padding,
+        margin: 15
     },
     backBtn: {
         marginVertical: 25
@@ -222,7 +223,7 @@ const styles = StyleSheet.create({
     },
     profileInput: {
         height: 30,
-        fontFamily: 'Montserrat-Regular'
+        fontFamily: 'MontserratRegular'
     },
     editable: {
         color: theme.colors.dark
@@ -237,7 +238,7 @@ const styles = StyleSheet.create({
         borderWidth: 2,
         borderRadius: 5,
         paddingHorizontal: 10,
-        fontFamily: 'Montserrat-Regular'
+        fontFamily: 'MontserratRegular'
     },
     saveBtn: {
         backgroundColor: theme.colors.success,

@@ -76,14 +76,18 @@ class Login extends Component {
 
 const styles = StyleSheet.create({
 	container: {
-		// padding: width * 0.05 + 2,
-		// padding: theme.sizes.padding,
+		padding: width * 0.05 + 2,
+		padding: theme.sizes.padding,
 		height
 	},
 	safe: {
 		flex: 1,
 		backgroundColor: theme.colors.light,
-		padding: theme.sizes.padding
+		padding: theme.sizes.padding,
+		// margin: 
+		// justifyContent: 'center',
+		margin: 15,
+		// paddingBottom: 5
 	},
 	authInput: {
 		height: 50,

@@ -33,14 +33,14 @@ const sizes = {
 
 const fonts = {
 	h1: {
-		fontFamily: 'Montserrat-Bold',
+		fontFamily: 'MontserratBold',
 		fontSize: sizes.h1
 	},
 	h2: {
 		fontSize: sizes.h2
 	},
 	h3: {
-		fontFamily: 'Montserrat-SemiBold',
+		fontFamily: 'MontserratSemiBold',
 		fontSize: sizes.h3
 	},
 	body: {
@@ -50,7 +50,7 @@ const fonts = {
 		fontSize: sizes.title
 	},
 	caption: {
-		fontFamily: 'Montserrat-Bold',
+		fontFamily: 'MontserratBold',
 		fontSize: sizes.caption
 	},
 	small: {

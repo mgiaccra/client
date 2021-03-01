@@ -87,7 +87,7 @@ export default class Typography extends Component {
 const styles = StyleSheet.create({
     // Default Style
     text: {
-        fontFamily: 'Montserrat-Regular',
+        fontFamily: 'MontserratRegular',
         fontSize: theme.sizes.font,
         color: theme.colors.dark
     },

@@ -57,13 +57,18 @@ class Register extends Component {
 
 const styles = StyleSheet.create({
 	container: {
-		// padding: theme.sizes.padding,
+		padding: width * 0.05 + 2,
+		padding: theme.sizes.padding,
 		height
 	},
 	safe: {
 		flex: 1,
 		backgroundColor: theme.colors.light,
-		padding: theme.sizes.padding
+		padding: theme.sizes.padding,
+		// margin: 
+		// justifyContent: 'center',
+		margin: 15,
+		// paddingBottom: 5
 	},
 	authInput: {
 		height: 50,
@@ -71,7 +76,7 @@ const styles = StyleSheet.create({
 		borderWidth: 2,
 		borderRadius: 5,
 		paddingHorizontal: 10,
-		fontFamily: 'Montserrat-Regular'
+		fontFamily: 'MontserratRegular'
 	},
 	authBtn: {
 		backgroundColor: theme.colors.secondary,

@@ -42,7 +42,7 @@ class App extends Component {
     render() {
         if (!this.state.fontsLoaded) {
             return (
-                <Block middle style={styles.container}>
+                <Block center middle style={styles.container}>
                     <ActivityIndicator size='large' color={theme.colors.secondary} />
                 </Block>
             )
@@ -57,7 +57,8 @@ class App extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        padding: theme.sizes.padding
+        padding: theme.sizes.padding,
+        // margin: theme.sizes.padding
     }
 })
 

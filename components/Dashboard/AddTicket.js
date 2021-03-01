@@ -142,7 +142,7 @@ class AddTicket extends Component {
                         <Text h3 semibold style={{ marginBottom: -10, }}>Title</Text>
                         <Picker
                             selectedValue={this.state.title}
-                            style={{ fontFamily: 'Montserrat-Regular' }}
+                            style={{ fontFamily: 'MontserratRegular' }}
                             // itemStyle={styles.pickerItem}
                             onValueChange={this.onChangeTitlePicker}>
                             {mocks.requestTitles.map(title => this.renderRequestTitleItem(title))}
@@ -224,12 +224,13 @@ class AddTicket extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        height
+		height
     },
     safe: {
         flex: 1,
         backgroundColor: theme.colors.light,
-        padding: theme.sizes.padding
+        padding: theme.sizes.padding,
+		margin: 15,
     },
     backBtn: {
         marginVertical: 25
@@ -245,7 +246,7 @@ const styles = StyleSheet.create({
     },
     profileInput: {
         height: 30,
-        fontFamily: 'Montserrat-Regular'
+        fontFamily: 'MontserratRegular'
     },
     saveBtn: {
         backgroundColor: theme.colors.primary,
@@ -270,7 +271,7 @@ const styles = StyleSheet.create({
         borderWidth: 2,
         borderRadius: 5,
         paddingHorizontal: 10,
-        fontFamily: 'Montserrat-Regular',
+        fontFamily: 'MontserratRegular',
 
     },
     description: {
@@ -280,10 +281,10 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         paddingHorizontal: 10,
         paddingVertical: 10,
-        fontFamily: 'Montserrat-Regular',
+        fontFamily: 'MontserratRegular',
     },
     pickerItem: {
-        fontFamily: 'Montserrat-Regular',
+        fontFamily: 'MontserratRegular',
     },
     destination: {
         width: width - (36 * 2),

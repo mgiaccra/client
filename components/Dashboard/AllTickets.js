@@ -129,7 +129,9 @@ const styles = StyleSheet.create({
     safe: {
         flex: 1,
         backgroundColor: theme.colors.light,
-        padding: theme.sizes.padding
+        padding: theme.sizes.padding,
+		margin: 15,
+
     },
     backBtn: {
         marginVertical: 25

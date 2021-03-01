@@ -88,7 +88,7 @@ class Home extends Component {
     renderHeader() {
         const { user } = this.props
         return (
-            <Block flex={0.5} column style={{ paddingHorizontal: 15 }}>
+            <Block flex={0.5} column style={{ paddingHorizontal: 15, zIndex: 100 }}>
                 <Block flex={false} row style={{ paddingVertical: 15, marginTop: 15 }}>
                     <Block center>
                         <Text h3 semibold light style={{ marginRight: -(25 + 5) }}>
@@ -118,7 +118,9 @@ class Home extends Component {
                         <Text lightText>Resolved</Text>
                         <Text lightText>Requests</Text>
                     </Block>
-                    <Block flex={1}>{this.renderChart()}</Block>
+                    <Block flex={1}>
+                        {this.renderChart()}
+                    </Block>
                 </Block>
             </Block>
         )
