@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
 		borderWidth: 2,
 		borderRadius: 5,
 		paddingHorizontal: 10,
-		fontFamily: 'Montserrat-Regular'
+		fontFamily: 'MontserratRegular'
 	},
 	authBtn: {
 		backgroundColor: theme.colors.secondary,

@@ -24,12 +24,12 @@ class App extends Component {
 
     async loadFonts() {
         return Font.loadAsync({
-            'Montserrat-Regular': require('./assets/fonts/Montserrat-Regular.ttf'),
-            'Montserrat-Bold': require('./assets/fonts/Montserrat-Bold.ttf'),
-            'Montserrat-SemiBold': require('./assets/fonts/Montserrat-SemiBold.ttf'),
-            'Montserrat-ExtraBold': require('./assets/fonts/Montserrat-ExtraBold.ttf'),
-            'Montserrat-Medium': require('./assets/fonts/Montserrat-Medium.ttf'),
-            'Montserrat-Light': require('./assets/fonts/Montserrat-Light.ttf')
+            'MontserratRegular': require('./assets/fonts/MontserratRegular.ttf'),
+            'MontserratBold': require('./assets/fonts/MontserratBold.ttf'),
+            'MontserratSemiBold': require('./assets/fonts/MontserratSemiBold.ttf'),
+            'MontserratExtraBold': require('./assets/fonts/MontserratExtraBold.ttf'),
+            'MontserratMedium': require('./assets/fonts/MontserratMedium.ttf'),
+            'MontserratLight': require('./assets/fonts/MontserratLight.ttf')
         })
     }
 

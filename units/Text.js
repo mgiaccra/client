@@ -93,13 +93,13 @@ const styles = StyleSheet.create({
     },
     // Variations:
     bold: {
-        fontFamily: 'Montserrat-Bold',
+        fontFamily: 'MontserratBold',
     },
     semibold: {
-        fontFamily: 'Montserrat-SemiBold',
+        fontFamily: 'MontserratSemiBold',
     },
     lightText: {
-        fontFamily: 'Montserrat-Light',
+        fontFamily: 'MontserratLight',
     },
     // Position
     center: { textAlign: 'center' },
