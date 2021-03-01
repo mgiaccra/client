@@ -22,7 +22,7 @@ class App extends Component {
         fontsLoaded: false
     }
 
-    loadFonts() {
+    async loadFonts() {
         return Font.loadAsync({
             'Montserrat-Regular': require('./assets/fonts/Montserrat-Regular.ttf'),
             'Montserrat-Bold': require('./assets/fonts/Montserrat-Bold.ttf'),
@@ -34,7 +34,7 @@ class App extends Component {
     }
 
     async componentDidMount() {
-        console.log('Auth loading')
+        // console.log('Auth loading')
         await this.loadFonts()
         this.setState({ fontsLoaded: true })
     }

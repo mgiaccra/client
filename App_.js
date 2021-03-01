@@ -13,8 +13,8 @@ export default class App extends Component {
         fontsLoaded: false
     }
 
-    loadFonts() {
-        return Font.loadAsync({
+    async loadFonts() {
+        return await Font.loadAsync({
             'Montserrat-Regular': require('./assets/fonts/Montserrat-Regular.ttf'),
             'Montserrat-Bold': require('./assets/fonts/Montserrat-Bold.ttf'),
             'Montserrat-SemiBold': require('./assets/fonts/Montserrat-SemiBold.ttf'),
